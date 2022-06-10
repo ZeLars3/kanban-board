@@ -1,6 +1,29 @@
 {
   "extends": "./tsconfig.json",
   "include": ["**/*.ts"],
+  "paths": {
+    "@shared/*": [
+      "apps/client/src/app/shared/*"
+    ],
+    "@core/*": [
+      "apps/client/src/app/core/*"
+    ],
+    "@pages/*": [
+      "apps/client/src/app/modules/pages/*"
+    ],
+    "@app/*": [
+      "apps/client/src/app/*"
+    ],
+    "@components/*": [
+      "apps/client/src/app/shared/components/*"
+    ],
+    "@assets/*": [
+      "apps/client/src/assets/*"
+    ],
+    "@environments/*": [
+      "apps/client/src/environments/*"
+    ]
+  },
   "compilerOptions": {
     "types": ["jest", "node"]
   }

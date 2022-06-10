@@ -7,5 +7,28 @@
   },
   "files": ["src/main.ts", "src/polyfills.ts"],
   "include": ["src/**/*.d.ts"],
+  "paths": {
+    "@shared/*": [
+      "apps/client/src/app/shared/*"
+    ],
+    "@core/*": [
+      "apps/client/src/app/core/*"
+    ],
+    "@pages/*": [
+      "apps/client/src/app/modules/pages/*"
+    ],
+    "@app/*": [
+      "apps/client/src/app/*"
+    ],
+    "@components/*": [
+      "apps/client/src/app/shared/components/*"
+    ],
+    "@assets/*": [
+      "apps/client/src/assets/*"
+    ],
+    "@environments/*": [
+      "apps/client/src/environments/*"
+    ]
+  },
   "exclude": ["**/*.test.ts", "**/*.spec.ts"]
 }
