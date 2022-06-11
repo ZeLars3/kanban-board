@@ -3,7 +3,7 @@
   "root": "apps/client",
   "sourceRoot": "apps/client/src",
   "prefix": "kanban",
-  "architect": {
+  "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": [
@@ -21,8 +21,8 @@
           "apps/client/src/assets"
         ],
         "styles": [
-          "apps/client/src/styles.scss",
-          "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+          "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/client/src/styles.scss"
         ],
         "scripts": []
       },

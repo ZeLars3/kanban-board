@@ -1,0 +1,53 @@
+.shell {
+  &__inner {
+    height: 100%;
+  }
+
+  &__sidenav {
+    width: 200px;
+    font-family: sofia-pro;
+  }
+
+  &__sidenav .mat-toolbar {
+    background: inherit;
+  }
+
+  &__logo {
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__menu-icon {
+    font-style: normal;
+    font-size: 1.25em;
+    margin-right: 16px;
+  }
+
+  &__button-menu {
+    ::ng-deep {
+      .mat-icon {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+.mat-drawer-side {
+  border: none;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.3);
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+
+::ng-deep {
+  .mat-toolbar-single-row {
+    justify-content: space-between;
+  }
+}

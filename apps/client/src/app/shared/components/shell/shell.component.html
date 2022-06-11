@@ -1,0 +1,50 @@
+<section class="shell">
+  <mat-sidenav-container class="shell__inner">
+    <mat-sidenav #drawer class="shell__sidenav" fixedInViewport
+                 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                 [opened]="false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
+        <a mat-list-item routerLink="/login" (click)="drawer.close()">Login</a>
+        <a mat-list-item routerLink="/kanban" (click)="drawer.close()">Kanban</a>
+        <a mat-list-item routerLink="/customers" (click)="drawer.close()">SSR</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar>
+        <button class="shell__button-menu" type="button" aria-label="Toggle sidenav"
+                mat-icon-button
+                (click)="drawer.toggle()"
+                *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">Menu</mat-icon>
+        </button>
+        <span class="shell__logo" routerLink="/">🔥 Angular</span>
+        <div *ngIf="!(isHandset$ | async)">
+          <a mat-button routerLink="/kanban">🍱 Kanban</a>
+          <a mat-button routerLink="/customers">⚡ SSR</a>
+          <a mat-button routerLink="/login">🔑 Login</a>
+        </div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>-></mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item>
+            <i class="shell__menu-icon">💬</i>
+          </a>
+          <a mat-menu-item>
+            <i class="shell__menu-icon">💾</i>
+          </a>
+          <a mat-menu-item>
+            <i class="shell__menu-icon">🔥</i>
+          </a>
+          <a mat-menu-item>
+            <i class="shell__menu-icon">📺</i>
+          </a>
+        </mat-menu>
+      </mat-toolbar>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>
