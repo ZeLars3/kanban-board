@@ -1,6 +1,6 @@
-import { IDropDownItem } from '../models';
+import { INavItem } from '../models';
 
-export const DROP_DOWN_MENU_ITEMS: IDropDownItem[] = [
+export const DROP_DOWN_MENU_ITEMS: INavItem[] = [
   {
     name: 'Chat',
     icon: '💬',

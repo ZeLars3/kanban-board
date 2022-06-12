@@ -3,7 +3,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, shareReplay, map } from 'rxjs';
 
 import { NAV_ITEMS } from './constans';
-import { IDropDownItem, INavItem } from './models';
+import { INavItem } from './models';
 import { DROP_DOWN_MENU_ITEMS } from './constans/drop-down-menu';
 
 @Component({
@@ -14,7 +14,7 @@ import { DROP_DOWN_MENU_ITEMS } from './constans/drop-down-menu';
 })
 export class ShellComponent {
   public navItems: INavItem[] = NAV_ITEMS;
-  public dropdownItems: IDropDownItem[] = DROP_DOWN_MENU_ITEMS;
+  public dropdownItems: INavItem[] = DROP_DOWN_MENU_ITEMS;
   public isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset]).pipe(
     map((result: BreakpointState) => result.matches),
     shareReplay(),
