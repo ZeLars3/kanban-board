@@ -5,7 +5,6 @@
 
   &__sidenav {
     width: 200px;
-    font-family: sofia-pro;
   }
 
   &__sidenav .mat-toolbar {
@@ -22,15 +21,6 @@
     font-style: normal;
     font-size: 1.25em;
     margin-right: 16px;
-  }
-
-  &__button-menu {
-    ::ng-deep {
-      .mat-icon {
-        width: 40px;
-        height: 40px;
-      }
-    }
   }
 }
 
