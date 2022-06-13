@@ -12,10 +12,11 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "14.0.1",
-    "@angular/cdk": "14.0.1",
     "@angular/common": "14.0.1",
     "@angular/compiler": "14.0.1",
     "@angular/core": "14.0.1",
+    "@angular/cdk": "14.0.1",
+    "@angular/fire": "^7.4.1",
     "@angular/forms": "14.0.1",
     "@angular/material": "^14.0.1",
     "@angular/platform-browser": "14.0.1",
@@ -23,6 +24,7 @@
     "@angular/router": "14.0.1",
     "@ngneat/spectator": "^11.0.0",
     "@nrwl/angular": "14.2.4",
+    "firebase": "^9.8.3",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
