@@ -4,9 +4,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 
 import { environment } from '@environments/environment';
+import { UserModule } from '@pages/user/user.module';
 import { SharedModule } from '@shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    RouterModule,
+    UserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
