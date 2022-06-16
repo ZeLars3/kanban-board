@@ -1,0 +1,74 @@
+@import 'apps/client/src/assets/styles/colors';
+
+.login {
+  margin: 0 auto;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+  }
+
+  &__item {
+    max-width: 550px;
+    width: inherit;
+    height: auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    border-radius: 10px;
+    border: 1px solid $darkGray;
+    margin-top: 20px;
+    padding: 0 50px;
+    background-color: $white;
+  }
+
+  &__text {
+    color: $black;
+    font-size: 16px;
+  }
+
+  &__icon {
+    margin-right: 15px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__separator {
+    text-align: center;
+    margin: 0;
+  }
+
+  &__link {
+    color: $orange;
+  }
+}
+
+::ng-deep {
+  .mat-card-header {
+    display: inline !important;
+  }
+
+  .mat-card-actions .mat-raised-button {
+    margin: 10px 0 !important;
+    height: 45px;
+    border-radius: 15px;
+  }
+}

@@ -6,11 +6,12 @@ import { RoutePaths } from '@core/enums';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/pages/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./modules/pages/home/home.module').then(m => m.HomeModule),
+    title: 'Home',
   },
   {
     path: RoutePaths.Login,
-    loadChildren: () => import('./modules/pages/user/user.module').then(m => m.UserModule)
+    loadChildren: () => import('./modules/pages/auth/auth.module').then(m => m.AuthModule)
   }
 ];
 

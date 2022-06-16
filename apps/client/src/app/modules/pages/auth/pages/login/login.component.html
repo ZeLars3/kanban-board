@@ -1,0 +1,44 @@
+<section class="login">
+  <div class="login__inner">
+    <div class="login__item">
+
+      <mat-card class="login__main">
+        <mat-card-header>
+          <mat-card-title class="login__title">Login</mat-card-title>
+        </mat-card-header>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" fxLayout="column" class="login__form">
+          <mat-form-field>
+            <input formControlName="email" matInput placeholder="Email">
+            <mat-error *ngIf="form.get('email').hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="form.get('email').hasError('email')">Email is invalid</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input formControlName="password" type="password" matInput placeholder="Password">
+            <mat-error *ngIf="form.get('email').hasError('required')">Email is required</mat-error>
+          </mat-form-field>
+
+          <mat-card-actions fxLayout="column">
+            <button mat-raised-button color="primary">Login</button>
+            <h1 class="login__separator">OR</h1>
+            <button mat-raised-button kanbanGoogleAuth class="login__button">
+              <img class="login__icon" [src]="googleIcon" alt="google icon"/>
+              <span class="login__text">Sign in with Google</span>
+            </button>
+          </mat-card-actions>
+
+        </form>
+        <p>
+          Don't have an account?
+          <a class="login__link" [routerLink]="['']">Sign up</a>
+        </p>
+        <p>
+          Forgot your password?
+          <a class="login__link" [routerLink]="['']">Reset password</a>
+        </p>
+      </mat-card>
+
+    </div>
+  </div>
+</section>

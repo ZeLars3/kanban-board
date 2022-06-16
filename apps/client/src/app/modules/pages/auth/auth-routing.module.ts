@@ -6,7 +6,8 @@ import { LoginComponent } from './pages/login/login.component';
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent
+    component: LoginComponent,
+    title: 'Login',
   }
 ];
 
@@ -14,5 +15,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class UserRoutingModule {
+export class AuthRoutingModule {
 }
