@@ -41,12 +41,9 @@
           </mat-form-field>
 
           <mat-card-actions fxLayout="column">
-            <button mat-raised-button color="primary">Registration</button>
+            <button [disabled]="form.invalid" mat-raised-button color="primary">Registration</button>
           </mat-card-actions>
-
         </form>
-
-        <p>{{ serverMessage }}</p>
 
         <p>Already have an account?
           <a class="register__link" [routerLink]="['', routePaths.Login]">Login</a>

@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
 import { RouteAuthPaths } from '@core/enums';
+import { SnackbarService } from '@shared/services';
 
 import { PasswordValidator } from '../../services';
 import { MAX_USERNAME_LENGTH, MIN_USERNAME_LENGTH } from '../../constants';
@@ -17,7 +18,6 @@ import { MAX_USERNAME_LENGTH, MIN_USERNAME_LENGTH } from '../../constants';
 export class RegisterComponent implements OnInit {
   public form: FormGroup;
   public routePaths = RouteAuthPaths;
-  public serverMessage: string;
   public minUsernameLength: number = MIN_USERNAME_LENGTH;
   public maxUsernameLength: number = MAX_USERNAME_LENGTH;
 
@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
     private passwordValidator: PasswordValidator,
     private angularFireAuth: AngularFireAuth,
     private router: Router,
+    private snackbarService: SnackbarService,
   ) {
   }
 
@@ -38,9 +39,10 @@ export class RegisterComponent implements OnInit {
 
     try {
       await this.angularFireAuth.createUserWithEmailAndPassword(email, password);
+      this.snackbarService.createSuccessSnackbar('Successfully registered');
       await this.router.navigate(['/']);
     } catch (error) {
-      this.serverMessage = error;
+      this.snackbarService.createErrorSnackbar(error.code);
     }
   }
 

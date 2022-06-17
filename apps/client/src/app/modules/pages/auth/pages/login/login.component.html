@@ -20,17 +20,14 @@
           </mat-form-field>
 
           <mat-card-actions fxLayout="column">
-            <button mat-raised-button color="primary">Login</button>
+            <button [disabled]="form.invalid" mat-raised-button color="primary">Login</button>
             <h1 class="login__separator">OR</h1>
             <button mat-raised-button kanbanGoogleAuth class="login__button">
               <img class="login__icon" [src]="googleIcon" alt="google icon"/>
               <span class="login__text">Sign in with Google</span>
             </button>
           </mat-card-actions>
-
         </form>
-
-        <p>{{ serverMessage }}</p>
 
         <p>
           Don't have an account?

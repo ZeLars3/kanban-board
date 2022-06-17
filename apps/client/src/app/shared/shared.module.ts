@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '@app/material.module';
 
 import { ShellModule } from './components/shell/shell.module';
+import { UnsubscribeDirective } from './directives';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [UnsubscribeDirective, SafeHtmlPipe],
   imports: [
     CommonModule,
     MaterialModule,
@@ -15,6 +17,7 @@ import { ShellModule } from './components/shell/shell.module';
   exports: [
     MaterialModule,
     ShellModule,
+    SafeHtmlPipe,
   ],
 })
 export class SharedModule {

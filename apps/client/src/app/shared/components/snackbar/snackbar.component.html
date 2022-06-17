@@ -1,0 +1,8 @@
+<section class="snackbar">
+  <div class="snackbar__item">
+    <div *ngFor="let snackbar of snackbars$ | async" class="{{ getSnackbarClass(snackbar) }}">
+      <span class="snackbar__message" [innerHTML]="snackbar.message | safeHtml"></span>
+      <mat-icon class="snackbar__close" (click)="removeSnackbar(snackbar.id)">remove</mat-icon>
+    </div>
+  </div>
+</section>
