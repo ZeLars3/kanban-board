@@ -8,12 +8,17 @@ import { MaterialModule } from '@app/material.module';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginComponent } from './pages/login/login.component';
-import { GoogleAuthDirective } from './pages/login/directives/google-auth.directive';
+import { GoogleAuthDirective } from './directives/google-auth.directive';
+import { RegisterComponent } from './pages/register/register.component';
+import { PasswordValidator } from './services';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    GoogleAuthDirective
+    GoogleAuthDirective,
+    RegisterComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +27,9 @@ import { GoogleAuthDirective } from './pages/login/directives/google-auth.direct
     FlexModule,
     ReactiveFormsModule,
     RouterModule,
+  ],
+  providers: [
+    PasswordValidator,
   ],
 })
 export class AuthModule {
