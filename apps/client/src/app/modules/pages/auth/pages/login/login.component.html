@@ -29,13 +29,16 @@
           </mat-card-actions>
 
         </form>
+
+        <p>{{ serverMessage }}</p>
+
         <p>
           Don't have an account?
-          <a class="login__link" [routerLink]="['']">Sign up</a>
+          <a class="login__link" [routerLink]="['', routeAuthPath.Register]">Sign up</a>
         </p>
         <p>
           Forgot your password?
-          <a class="login__link" [routerLink]="['']">Reset password</a>
+          <a class="login__link" (click)="openDialog()">Reset password</a>
         </p>
       </mat-card>
 

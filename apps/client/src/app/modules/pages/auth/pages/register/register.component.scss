@@ -1,6 +1,6 @@
 @import 'apps/client/src/assets/styles/colors';
 
-.login {
+.register {
   &__inner {
     display: flex;
     align-items: center;
@@ -19,27 +19,6 @@
     padding: 30px;
   }
 
-  &__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    border-radius: 10px;
-    border: 1px solid $darkGray;
-    margin-top: 20px;
-    padding: 0 50px;
-    background-color: $white;
-  }
-
-  &__text {
-    color: $black;
-    font-size: 16px;
-  }
-
-  &__icon {
-    margin-right: 15px;
-  }
-
   &__title {
     font-size: 36px;
     font-weight: bold;
@@ -48,14 +27,8 @@
     justify-content: center;
   }
 
-  &__separator {
-    text-align: center;
-    margin: 0;
-  }
-
   &__link {
     color: $orange;
-    cursor: pointer;
   }
 }
 

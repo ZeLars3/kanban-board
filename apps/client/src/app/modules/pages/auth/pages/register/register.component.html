@@ -1,0 +1,58 @@
+<section class="register">
+  <div class="register__inner">
+    <div class="register__item">
+
+      <mat-card class="register__main">
+        <mat-card-header>
+          <mat-card-title class="register__title">Registration</mat-card-title>
+        </mat-card-header>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" fxLayout="column" class="register__form">
+          <mat-form-field>
+            <input formControlName="username" matInput placeholder="Username">
+            <mat-error *ngIf="form.get('username').hasError('required')">Username is required</mat-error>
+            <mat-error *ngIf="form.get('username').hasError('minlength')">
+              Username must be at least {{ minUsernameLength }} characters
+            </mat-error>
+            <mat-error *ngIf="form.get('username').hasError('maxlength')">
+              Username must be at most {{ maxUsernameLength }} characters
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input formControlName="email" matInput placeholder="Email">
+            <mat-error *ngIf="form.get('email').hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="form.get('email').hasError('email')">Email is invalid</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input formControlName="password" type="password" matInput placeholder="Password">
+            <mat-error *ngIf="form.get('password').hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="form.get('password').hasError('minlength')">
+              Password must be at least 8 characters
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input formControlName="confirmPassword" type="password" matInput placeholder="Confirm Password">
+            <mat-error *ngIf="form.get('confirmPassword').hasError('required')">Please confirm your password</mat-error>
+            <mat-error *ngIf="form.get('confirmPassword').hasError('passwordMismatch')">Passwords do not match
+            </mat-error>
+          </mat-form-field>
+
+          <mat-card-actions fxLayout="column">
+            <button mat-raised-button color="primary">Registration</button>
+          </mat-card-actions>
+
+        </form>
+
+        <p>{{ serverMessage }}</p>
+
+        <p>Already have an account?
+          <a class="register__link" [routerLink]="['', routePaths.Login]">Login</a>
+        </p>
+      </mat-card>
+
+    </div>
+  </div>
+</section>

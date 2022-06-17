@@ -4,3 +4,8 @@ export enum RoutePaths {
   Kanban = 'kanban',
   SSR = 'ssr',
 }
+
+export enum RouteAuthPaths {
+  Login = 'login',
+  Register = 'register',
+}
