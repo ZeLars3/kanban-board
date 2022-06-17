@@ -11,14 +11,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { GoogleAuthDirective } from './directives/google-auth.directive';
 import { RegisterComponent } from './pages/register/register.component';
 import { PasswordValidator } from './services';
-import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ResetPasswordDialogComponent } from './components/reset-password-dialog/reset-password-dialog.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     GoogleAuthDirective,
     RegisterComponent,
-    ResetPasswordComponent
+    ResetPasswordDialogComponent
   ],
   imports: [
     CommonModule,

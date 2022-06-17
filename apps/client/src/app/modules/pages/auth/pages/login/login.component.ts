@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
 import { RouteAuthPaths, RoutePaths } from '@core/enums';
+import { SnackbarService } from '@shared/services';
 
 import { GOOGLE_ICON_LINK } from '../../constants';
-import { ResetPasswordComponent } from '../../components/reset-password/reset-password.component';
+import { ResetPasswordDialogComponent } from '../../components/reset-password-dialog/reset-password-dialog.component';
 
 @Component({
   selector: 'kanban-login',
@@ -21,13 +22,13 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
   public routeAuthPath = RouteAuthPaths;
   public routePath = RoutePaths;
-  public serverMessage: string;
 
   constructor(
     private angularFireAuth: AngularFireAuth,
     private formBuilder: FormBuilder,
     private router: Router,
     private dialog: MatDialog,
+    private snackbarService: SnackbarService,
   ) {
   }
 
@@ -44,14 +45,15 @@ export class LoginComponent implements OnInit {
 
     try {
       await this.angularFireAuth.signInWithEmailAndPassword(email, password);
+      this.snackbarService.createSuccessSnackbar('Successfully logged in');
       await this.router.navigate([this.routePath.Home]);
     } catch (error) {
-      this.serverMessage = error.message;
+      this.snackbarService.createErrorSnackbar(error.code);
     }
   }
 
   public openDialog(): void {
-    this.dialog.open(ResetPasswordComponent);
+    this.dialog.open(ResetPasswordDialogComponent);
   }
 
   private initForm(): void {

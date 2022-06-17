@@ -1,0 +1,56 @@
+@import 'apps/client/src/assets/styles/colors';
+
+.snackbar {
+  &__item {
+    z-index: 99;
+    max-width: 350px;
+    font-size: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    font-weight: 500;
+    color: $white;
+    position: fixed;
+  }
+
+  &__message {
+    padding: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__close {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__wrapper {
+    border-radius: 5px;
+    align-items: center;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__success {
+    background-color: $successGreen;
+  }
+
+  &__error {
+    background-color: $errorRed;
+  }
+
+  &__warning {
+    background-color: $yellowWarning;
+  }
+
+  &__info {
+    background-color: $blueInfo;
+  }
+}
