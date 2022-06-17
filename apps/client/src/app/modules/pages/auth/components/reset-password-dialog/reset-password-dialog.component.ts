@@ -6,12 +6,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { SnackbarService } from '@shared/services';
 
 @Component({
-  selector: 'kanban-reset-password',
-  templateUrl: './reset-password.component.html',
-  styleUrls: ['./reset-password.component.scss'],
+  selector: 'kanban-reset-password-dialog',
+  templateUrl: './reset-password-dialog.component.html',
+  styleUrls: ['./reset-password-dialog.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ResetPasswordComponent {
+export class ResetPasswordDialogComponent {
   public email: FormControl = new FormControl('', [Validators.email]);
 
   constructor(
@@ -27,7 +27,7 @@ export class ResetPasswordComponent {
         this.snackbarService.creteInfoSnackbar('Please check your email');
       });
     } catch (error) {
-      this.snackbarService.createErrorSnackbar(error.errors.message);
+      this.snackbarService.createErrorSnackbar(error.code);
     }
     this.dialog.closeAll();
   }

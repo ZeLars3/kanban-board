@@ -2,12 +2,15 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import firebase from 'firebase/compat';
 
-import { RouteAuthPaths } from '@core/enums';
+import { RoutePaths } from '@core/enums';
 import { SnackbarService } from '@shared/services';
 
 import { PasswordValidator } from '../../services';
 import { MAX_USERNAME_LENGTH, MIN_USERNAME_LENGTH } from '../../constants';
+
+import UserCredential = firebase.auth.UserCredential;
 
 @Component({
   selector: 'kanban-register',
@@ -17,7 +20,7 @@ import { MAX_USERNAME_LENGTH, MIN_USERNAME_LENGTH } from '../../constants';
 })
 export class RegisterComponent implements OnInit {
   public form: FormGroup;
-  public routePaths = RouteAuthPaths;
+  public routePath = RoutePaths;
   public minUsernameLength: number = MIN_USERNAME_LENGTH;
   public maxUsernameLength: number = MAX_USERNAME_LENGTH;
 
@@ -38,9 +41,12 @@ export class RegisterComponent implements OnInit {
     const {email, password} = this.form.value;
 
     try {
-      await this.angularFireAuth.createUserWithEmailAndPassword(email, password);
+      await this.angularFireAuth.createUserWithEmailAndPassword(email, password).then((result: UserCredential) => {
+        this.snackbarService.createSuccessSnackbar('Please check your email to verify your account.');
+        result.user.sendEmailVerification();
+      });
       this.snackbarService.createSuccessSnackbar('Successfully registered');
-      await this.router.navigate(['/']);
+      await this.router.navigate([this.routePath.Home]);
     } catch (error) {
       this.snackbarService.createErrorSnackbar(error.code);
     }

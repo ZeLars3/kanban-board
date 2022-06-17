@@ -8,7 +8,7 @@ import { RouteAuthPaths, RoutePaths } from '@core/enums';
 import { SnackbarService } from '@shared/services';
 
 import { GOOGLE_ICON_LINK } from '../../constants';
-import { ResetPasswordComponent } from '../../components/reset-password/reset-password.component';
+import { ResetPasswordDialogComponent } from '../../components/reset-password-dialog/reset-password-dialog.component';
 
 @Component({
   selector: 'kanban-login',
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
   }
 
   public openDialog(): void {
-    this.dialog.open(ResetPasswordComponent);
+    this.dialog.open(ResetPasswordDialogComponent);
   }
 
   private initForm(): void {
