@@ -1,5 +1,5 @@
 export enum RoutePaths {
-  Home = '',
+  Home = 'home',
   Login = 'login',
   Kanban = 'kanban',
   SSR = 'ssr',
