@@ -4,7 +4,7 @@ import { INavItem } from '../models';
 
 export const NAV_ITEMS: INavItem[] = [
   {
-    name: ' Home',
+    name: 'Home',
     path: RoutePaths.Home,
   },
   {

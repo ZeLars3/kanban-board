@@ -19,7 +19,7 @@
                 *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <span class="shell__logo" routerLink="/">🔥 Angular</span>
+        <span class="shell__logo" [routerLink]="['', routePath.Home]">🔥 Angular</span>
         <div *ngIf="!(isHandset$ | async)">
           <a *ngFor="let item of navItems | slice: 1: 4" mat-button [routerLink]=item.path>{{ item.name }}</a>
           <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">

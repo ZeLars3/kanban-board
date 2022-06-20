@@ -13,6 +13,7 @@ import { SnackbarService } from '@shared/services';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthGuard } from '@shared/guards';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +30,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     SnackbarService,
+    AuthGuard,
   ],
   bootstrap: [AppComponent],
 })
