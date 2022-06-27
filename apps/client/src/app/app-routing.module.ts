@@ -19,6 +19,11 @@ const routes: Routes = [
     path: RoutePaths.Login,
     loadChildren: () => import('./modules/pages/auth/auth.module').then(m => m.AuthModule)
   },
+  {
+    path: RoutePaths.Kanban,
+    loadChildren: () => import('./modules/pages/kanban/kanban.module').then(m => m.KanbanModule),
+    canActivate: [AuthGuard],
+  }
 ];
 
 @NgModule({
