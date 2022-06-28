@@ -6,10 +6,11 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatCardModule } from "@angular/material/card";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInput, MatInputModule } from "@angular/material/input";
-import { MatDialogModule } from "@angular/material/dialog";
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    DragDropModule,
   ],
   exports: [
     MatSidenavModule,
@@ -37,6 +39,7 @@ import { MatDialogModule } from "@angular/material/dialog";
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    DragDropModule,
   ],
 })
 export class MaterialModule {

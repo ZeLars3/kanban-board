@@ -1,0 +1,21 @@
+<section class="board">
+  <mat-card class="board__card">
+    <mat-card-header>
+      <ng-content></ng-content>
+      <mat-card-title>
+        {{ board.title }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ board.id }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <div class="board__tasks" cdkDropList cdkDropListOrientation="vertical" (cdkDropListDropped)="taskDrop($event)">
+      <div class="board__inner-card" cdkDrag *ngFor="let task of board.tasks; let i = index">
+        <mat-card [ngClass]="task.label">
+          {{ task.description }}
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</section>
